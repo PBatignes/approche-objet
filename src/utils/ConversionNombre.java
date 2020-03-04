@@ -1,5 +1,9 @@
 package utils;
 
+/**
+ * @author Pierre
+ *
+ */
 public class ConversionNombre {
 	
 	public static void main(String[] args) {

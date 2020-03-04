@@ -3,9 +3,9 @@ package fr.diginamic.banque;
 import fr.diginamic.banque.entites.Compte;
 import fr.diginamic.banque.entites.CompteTaux;
 
-/**
+/**Classe de test
  * 
- * @author pierre
+ * @author Pierre
  *
  */
 public class TestBanque {

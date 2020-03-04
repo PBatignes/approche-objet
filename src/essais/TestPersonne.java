@@ -3,6 +3,11 @@ package essais;
 import entites.AdressePostale;
 import entites.Personne;
 
+/**Classe de test des personnes
+ * 
+ * @author Pierre
+ *
+ */
 public class TestPersonne {
 
 	public static void main(String[] args) {
