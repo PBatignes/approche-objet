@@ -11,14 +11,14 @@ public class Compte {
 	private int numCompte;
 	
 	/** Solde du compte */
-	private int soldeCompte;
+	private double soldeCompte;
 	
 	/**Constructor
 	 * 
 	 * @param numCompte		Numéro deu compte
 	 * @param soldeCompte	Solde du compte
 	 */
-	public Compte(int numCompte, int soldeCompte) {
+	public Compte(int numCompte, double soldeCompte) {
 		super();
 		this.numCompte = numCompte;
 		this.soldeCompte = soldeCompte;
@@ -44,7 +44,7 @@ public class Compte {
 	 * 
 	 * @return soldeCompte
 	 */
-	public int getSoldeCompte() {
+	public double getSoldeCompte() {
 		return soldeCompte;
 	}
 
