@@ -4,6 +4,7 @@
 package fr.diginamic.essais;
 
 import fr.diginamic.banque.entites.Cercle;
+import fr.diginamic.utils.CercleFactory;
 
 /**Classe de test
  * 
@@ -17,8 +18,8 @@ public class TestCercle {
 	 */
 	public static void main(String[] args) {
 		
-		Cercle c1 = new Cercle(5.0);
-		Cercle c2 = new Cercle(10.0);
+		Cercle c1 = CercleFactory.factory(5.0);
+		Cercle c2 = CercleFactory.factory(10.0);
 		
 		System.out.println(c1.perimetre() + "\n" + 
 							c1.surface() + "\n" + 
