@@ -3,6 +3,8 @@
  */
 package fr.diginamic.essais;
 
+import java.util.Scanner;
+
 import fr.diginamic.maison.Chambre;
 import fr.diginamic.maison.Cuisine;
 import fr.diginamic.maison.Maison;
@@ -23,6 +25,7 @@ public class TestMaison {
 	public static void main(String[] args) {
 		
 		Maison m = new Maison();
+		Scanner scan = new Scanner(System.in);
 		
 		Salon salon = new Salon(40.0, 0);
 		m.ajouterPiece(salon);
@@ -41,7 +44,13 @@ public class TestMaison {
 		
 		System.out.println("Superficie totale : " + m.getSuperficieTotale());
 		System.out.println("Superficie 1er etage : " + m.getSuperficieParEtage(1));
-
+		
+		System.out.println("\nSélectionnez le type de pièces dont vous voulez calculer la superficie : ");
+		System.out.println(m.getSuperficieParTypePiece(scan.nextLine()));
+		
+		System.out.println("\nSélectionnez le type de pièces que vous voulez compter : ");
+		System.out.println(m.getNbPiecesParTypePiece(scan.nextLine()));
+		
 	}
 
 }

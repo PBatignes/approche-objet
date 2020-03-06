@@ -12,11 +12,11 @@ import java.util.List;
  *
  */
 public class Maison {
-	
+
 	private List<Piece> list = new ArrayList<Piece>();
-	
+
 	public void ajouterPiece(Piece p) {
-		
+
 		if (p != null) {
 			if (p.getSuperficie() > 0) {
 				list.add(p);
@@ -24,40 +24,76 @@ public class Maison {
 				throw new ArithmeticException("La superficie de vos pieces ne peut etre négative");
 			}
 		} else {
-			throw new NullPointerException("Votre piece doit avoir une superficie et un etage");  
+			throw new NullPointerException("Votre piece doit avoir une superficie et un etage");
 		}
-		
+
 	}
-	
+
 	public double getSuperficieTotale() {
-		
+
 		double superficieTotale = 0;
-		
+
 		for (Piece p : list) {
-			
+
 			superficieTotale += p.getSuperficie();
-			
+
 		}
-		
+
 		return superficieTotale;
-		
+
+	}
+
+	public double getSuperficieParEtage(int etage) {
+
+		double superficieTotale = 0;
+
+		for (Piece p : list) {
+
+			if (p.getEtage() == etage) {
+
+				superficieTotale += p.getSuperficie();
+
+			}
+
+		}
+
+		return superficieTotale;
+
+	}
+
+	public double getSuperficieParTypePiece(String piece) {
+
+		double superficieTotale = 0;
+
+		for (Piece p : list) {
+
+			if (p.getClass().getSimpleName().toUpperCase().equals(piece.toUpperCase().replace(" ", ""))) {
+
+				superficieTotale += p.getSuperficie();
+
+			}
+
+		}
+
+		return superficieTotale;
+
 	}
 	
-public double getSuperficieParEtage(int etage) {
+	public int getNbPiecesParTypePiece(String piece) {
 		
-		double superficieTotale = 0;
+		int nbPiece = 0;
 		
 		for (Piece p : list) {
 			
-			if (p.getEtage() == etage) {
+			if (p.getClass().getSimpleName().toUpperCase().equals(piece.toUpperCase().replace(" ", ""))) {
 				
-				superficieTotale += p.getSuperficie();
+				nbPiece += 1;
 				
 			}
 			
 		}
 		
-		return superficieTotale;
+		return nbPiece;
 		
 	}
 
