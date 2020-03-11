@@ -30,12 +30,10 @@ public class TestTri {
 		Collections.<Pays>sort(list);
 		System.out.println(list);
 		
-		ComparatorHabitant compHab = new ComparatorHabitant();
-		list.sort(compHab);
+		Collections.sort(list, new ComparatorHabitant());
 		System.out.println(list);
 		
-		ComparatorPibHabitant compPib = new ComparatorPibHabitant();
-		list.sort(compPib);;
+		Collections.sort(list, new ComparatorPibHabitant());
 		System.out.println(list);
 		
 	}
