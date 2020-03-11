@@ -1,16 +1,11 @@
-/**
- * 
- */
-package sets;
-
-import java.util.Comparator;
+package tri;
 
 /**
  *
  * @author Pierre
  *
  */
-public class Pays{
+public class Pays implements  Comparable<Pays>{
 	
 	/** nom */
 	private String nom;
@@ -70,7 +65,7 @@ public class Pays{
 	 *
 	 * @return the pib
 	 */
-	public int getPib() {
+	public Integer getPib() {
 		return pib;
 	}
 
@@ -91,6 +86,11 @@ public class Pays{
 		
 		return (long)nbHab * (long)pib;
 		
+	}
+
+	@Override
+	public int compareTo(Pays p) {
+		return nom.compareTo(p.getNom());
 	}
 	
 }
