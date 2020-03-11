@@ -85,4 +85,10 @@ public class Pays {
 		return nom + ", " + nbHab + ", " + pib;
 	}
 	
+	public long getPibTotal () {
+		
+		return (long)nbHab * (long)pib;
+		
+	}
+	
 }

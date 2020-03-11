@@ -33,46 +33,44 @@ public class TestPays {
 		// Recherche le pays avec le PIB/habitant le plus important
 		Iterator<Pays> it = set.iterator();
 		while (it.hasNext()) {
+			Pays paysCourrant = it.next();
+			if (maxPib == null || maxPib.getPib() < paysCourrant.getPib()) {
 
-			if (maxPib == null || maxPib.getPib() < it.next().getPib()) {
-
-				maxPib = it.next();
+				maxPib = paysCourrant;
 
 			}
 
 		}
-		System.out.println(".");
+		System.out.println(maxPib);
 
 		// Recherche le pays avec le PIB total le plus important
-		Iterator<Pays> it2 = set.iterator();
-		while (it2.hasNext()) {
-
+		it = set.iterator();
+		while (it.hasNext()) {
+			Pays paysCourrant = it.next();
 			if (maxPibTotal == null || 
-				maxPibTotal.getPib() * maxPibTotal.getNbHab() < it2.next().getPib() 
-				* it2.next().getNbHab()) {
+				maxPibTotal.getPibTotal() < paysCourrant.getPibTotal()) {
 
-				maxPibTotal = it2.next();
+				maxPibTotal = paysCourrant;
 
 			}
 
 		}
-		System.out.println(".");
+		System.out.println(maxPibTotal);
 		
 		//Modifie le contenu du HashSet pour mettre en majuscule le pays qui a le PIB total le 
 		//plus petit 
-		Iterator<Pays> it3 = set.iterator();
-		while (it3.hasNext()) {
-
+		it = set.iterator();
+		while (it.hasNext()) {
+			Pays paysCourrant = it.next();
 			if (minPib == null || 
-					minPib.getPib() * minPib.getNbHab() > it3.next().getPib() 
-				* it3.next().getNbHab()) {
+					minPib.getPibTotal() > paysCourrant.getPibTotal()) {
 
-//				minPib = it3.next();
+				minPib = paysCourrant;
 
 			}
 
 		}
-		System.out.println(".");
+		System.out.println(minPib);
 		
 		set.remove(minPib);
 		set.add(new Pays(minPib.getNom().toUpperCase(), minPib.getNbHab(), minPib.getPib()));
