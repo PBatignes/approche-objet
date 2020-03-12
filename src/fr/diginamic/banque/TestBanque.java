@@ -25,6 +25,14 @@ public class TestBanque {
 			
 		}
 		
+		Compte compte1 = new Compte(123456, 1000.0);
+		Compte compte2 = new Compte(123456, 1000.0);
+		
+		System.out.println(compte1.equals(compte2));
+		
+		Compte compte3 = compte2;
+		System.out.println(compte2.equals(compte3));
+		
 	}
 
 }

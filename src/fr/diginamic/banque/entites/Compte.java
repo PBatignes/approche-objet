@@ -8,10 +8,10 @@ package fr.diginamic.banque.entites;
 public class Compte {
 	
 	/** Numéro de compte */
-	private int numCompte;
+	private Integer numCompte;
 	
 	/** Solde du compte */
-	private double soldeCompte;
+	private Double soldeCompte;
 	
 	/**Constructor
 	 * 
@@ -28,7 +28,7 @@ public class Compte {
 	 * 
 	 * @return numCompte
 	 */
-	public int getNumCompte() {
+	public Integer getNumCompte() {
 		return numCompte;
 	}
 
@@ -36,7 +36,7 @@ public class Compte {
 	 * 
 	 * @param numCompte
 	 */
-	public void setNumCompte(int numCompte) {
+	public void setNumCompte(Integer numCompte) {
 		this.numCompte = numCompte;
 	}
 
@@ -44,7 +44,7 @@ public class Compte {
 	 * 
 	 * @return soldeCompte
 	 */
-	public double getSoldeCompte() {
+	public Double getSoldeCompte() {
 		return soldeCompte;
 	}
 
@@ -52,7 +52,7 @@ public class Compte {
 	 * 
 	 * @param soldeCompte
 	 */
-	public void setSoldeCompte(int soldeCompte) {
+	public void setSoldeCompte(Double soldeCompte) {
 		this.soldeCompte = soldeCompte;
 	}
 	
@@ -62,6 +62,21 @@ public class Compte {
 	@Override
 	public String toString() {
 		return "Numéro du compte : " + numCompte + "\nSolde du compte : " + soldeCompte;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		
+		if (!(obj instanceof Compte)) {
+			
+			return false;
+			
+		} else {
+			
+			Compte cpt = (Compte) obj;
+			return numCompte.equals(cpt.getNumCompte()) && soldeCompte.equals(cpt.getSoldeCompte());
+		}
+		
 	}
 
 }
