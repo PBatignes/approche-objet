@@ -10,9 +10,6 @@ import org.junit.Test;
 import utils.IncorrectParameterException;
 import utils.StringUtils;
 
-/**
- * 
- */
 
 /**
  *
